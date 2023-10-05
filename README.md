@@ -1,7 +1,7 @@
 # Project 2: To Fail or Not To Fail?
 
 
-The goal of this project is to analyze recent quarterly banking data and determine if an individual can predict bank classification as risky. In order to do this, the team investigated QoQ change in asset values and financial ratios before feeding into a machine learning model.
+The goal of this project is to analyze recent quarterly bank data and determine if we can predict bank classification as risky. In order to do this, the team investigated QoQ change in asset values and financial ratios before feeding into a machine learning model.
 
 
 ## Table of Contents
@@ -22,14 +22,13 @@ The goal of this project is to analyze recent quarterly banking data and determi
 * [Data Source](/Data/bankdata.csv)
 
 ## General Information
-In the current financial market, banks are making riskier and riskier strategic moves to stay competitive.  In doing so, they open themselves up to higher levels of risk compared to normal practice procedures. 
+Given recent regional bank turmoil and the collapse of Silicon Valley Bank (SVB), First Republic, and Signature, there is a spotlight from the FDIC, regulators, and the public on the financial condition of banks. The macro interest rate environment has led to low cash balances, securities depreciation, and riskier lending practices to stay competitive.  In doing so, banks open themselves up to higher levels of risk compared normal market cycles. 
 
 
-When looking at specific ratios to indicate a banks “riskiness” rating: S/A (securities to assets), C/A (cash to assets), and L/D (loans to total_deposits), in addition to quarterly percent change (increase or decrease) of cash, assets, securities, loans, & deposits, you may be able to predict a risky banks chance of failure.  
+When looking at specific ratios to indicate a banks “riskiness” rating, we looked at 3 different metrics. S/A (securities to assets), C/A (cash to assets), and L/D (loans to total deposits). In addition to these metrics, we also looked at quarterly percent change (increase or decrease) of total cash, assets, securities, loans, & deposits. Using these metrics we wanted to understand which banks may me at risk of liquidity issues or failure.
 
 
-After identifying a risky bank that is potentially a risk for failure, you are able to change your investment position and company holdings in specific banks to ensure risk mitigation.
-
+After identifying a risky bank, an investor or depositor might seek to change their relationship with the bank from a trading or personal perspective. 
 
 ## Software and Technologies Used
 ### Technology
@@ -46,14 +45,13 @@ After identifying a risky bank that is potentially a risk for failure, you are a
 
 ## Data Prep & Model Training Process
 ### Where was the data sourced
-We used [BankRegData](https://www.bankregdata.com//main.asp)’s dataset/database to create a cohesive quarter or quarter dataset of all banks between 2019 and 2023.
-
+We used [BankRegData](https://www.bankregdata.com//main.asp)’s dataset/database to create a cohesive quarter or quarter dataset of all banks between 2019 and 2023. We picked this time period because over $800B of stimulus money entered the banking system during COVID and banks are starting to feel the rippling impact using these deposits. 
 
 ### What model was used
 We mainly considered the size of our data and the complexity of the problem when determining which type of model to use. 
 
 
-We planned on predicting bank failures based on financial metrics like cash, assets, loans, deposits, etc., and decided a more advanced model would be better suited than a simple linear regression model given the complexity of the problem. Specifically, we compared linear regression, logistic regression and neural network models.
+We planned on predicting liquidity issues and bank failures based on financial metrics like cash, assets, loans, deposits, etc., and decided a more advanced model would be better suited than a simple linear regression model given the complexity of the problem. Specifically, we compared linear regression, logistic regression and neural network models.
 
 
 | | Linear Regression | Logistic Regression | Neural Network | Priority |
@@ -133,22 +131,23 @@ When running the predictions, we identified 15% of banks that could be considere
 ![Bank Risk](Images/risky_vs_non_risky_banks.png)
 
 A list of risky banks, with high failure potential as of Q2’23 is saved here: 
-[Final Risky Bank List](‘Data/model_output.csv’) 
+[Final Risky Bank List](Data/model_output.csv) 
 
 When looking at all the risky banks we can see some banks have high indicators of risk that area associated with the peaks in the data. 
 
 ![Risky Banks](Images/risky_banks.png)
 
 ## Use Cases
-1. Predict upcoming bank failures for market indicators or revenue opportunities
+1. Predict upcoming liquidity issues and bank failures 
 2. Determine banks that may be considered risky for short selling
-3. Determine banks that are worth investment or working with when selecting a finance partner or cash storage option
+3. Determine which banks are "safe" to invest in, working with, or depositing your money 
 
 
 ## What if we had more time...?
 1. Continue to test new model optimizations to improve accuracy, recall, and precision of the model
 2. Build in a dynamic dashboard to evaluate banks and showcase risky banks in visual formats
 3. Build a dashboard that can automatically update based on new data uploads and is searchable for product use
+4. Create a trading algorithm that trades on safe and risky banks based on the ratios and metrics
 
 
 ## Team Information
