@@ -45,7 +45,7 @@ After identifying a risky bank, an investor or depositor might seek to change th
 
 ## Data Prep & Model Training Process
 ### Where was the data sourced
-We used [BankRegData](https://www.bankregdata.com//main.asp)’s dataset/database to create a cohesive quarter or quarter dataset of all banks between 2019 and 2023. We picked this time period because over $800B of stimulus money entered the banking system during COVID and banks are starting to feel the rippling impact using these deposits. 
+We used [BankRegData](https://www.bankregdata.com//main.asp)’s dataset/database to create a cohesive quarter over quarter dataset of all banks between 2019 and 2023. We picked this time period because over $800B of stimulus money entered the banking system during COVID and banks are starting to feel the rippling impact using these deposits. 
 
 ### What model was used
 We mainly considered the size of our data and the complexity of the problem when determining which type of model to use. 
