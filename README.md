@@ -85,6 +85,9 @@ For critical metrics, we grouped the data for each bank by quarter in order to d
 * C/A Ratio <= 0.05 (5%) and
 * L/D Ratio >= 0.70 (70%) 
 
+As seen in the box plot below, the average for securities to asset ratio falls around 20%, with outliers holding securities above 70% of total assets.  Based on our model, we can infer that these banks are overexposed to securities. In the event the securities depreciate, the bank would be a high risk target.  Similarly, banks with low cash to asset ratios would experience similar concerns.  The average is around 5%, but there are some outliers that are holding between 25-98% cash. Most banks that could be considered risky hold a loan to deposit ratio around 75%, but there are some outliers holding above 100% and close to 0%. 
+
+![Bank Risk](Images/box_plot.png)
 
 ### Training the Model
 When training the model, we attempted to identify a relationship between asset volume and calculated ratio levels (S/A, C/A , L/D) change QoQ to potential bank riskiness. 
@@ -122,16 +125,19 @@ Finally, to improve the model, we increased the number of epochs from 20 to 50 t
 ## Findings
 After a few rounds of optimization, we were able to generate a relatively strong model that could predict risky banks at a 96% accuracy.  When applying a new data set we had for Q2’23, we were able to predict banks that were risky based on QoQ changes, current asset volumes, and indicator ratio combinations.
 
-
 When running the predictions, we identified 15% of banks that could be considered high risk banks, primed for failure. 
 | Risky | Non-Risky | Total |
 | --- | --- | ---|
 | 697 | 3823 | 4520 |
 
+![Bank Risk](Images/risky_vs_non_risky_banks.png)
 
 A list of risky banks, with high failure potential as of Q2’23 is saved here: 
 [Final Risky Bank List](‘Data/model_output.csv’) 
 
+When looking at all the risky banks we can see some banks have high indicators of risk that area associated with the peaks in the data. 
+
+![Risky Banks](Images/risky_banks.png)
 
 ## Use Cases
 1. Predict upcoming bank failures for market indicators or revenue opportunities
